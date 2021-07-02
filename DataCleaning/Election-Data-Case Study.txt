@@ -1,0 +1,91 @@
+The Election Commission of India (ECI) is the constitutional authority responsible for conducting elections in India. The ECI website is a storehouse of information about the candidates who contest the elections, and about those who finally come to power.
+
+
+
+The ECI publishes statistics reports of each of the elections. The reports contain a large amount of data, though it is given in a format that is easy to read but not to analyse. The data has to be extracted and cleaned before it can be analysed.
+
+Data is in PDF , where there are 10,000 pages.
+Challenge is how to make it in structured data like excel, csv or txt.
+Tablue can work, for not for this huge data set.
+xPDF helps to move PDF to TXT, but there will be issues like blanks rows added,columns not perfectly
+aligned.
+
+
+To start data cleaning one needs to check data.
+Below are things that one can notice in ECI data set
+
+When Data was extracted for each constituency for every year.
+it was seen that few constituencies had no candidate for some years in between, then they had candidates suddely reappeared.
+Example of constituency is BHADRACHALAM
+
+How that is possible?
+Looking at other rows got to know that BHADRACHELAM is constituency where constituency has candidates
+exactly in years which were missing for earlier constituency
+That means either constituency name was changed or it was a spelling mistake.
+
+What we can see with ECI data is:
+Parties can be mis-spelt:
+MADMK
+MAMAK
+MDMK are all same
+
+Parties Name changed:
+AIADMK
+ADMK
+ADK
+
+parties restructure
+INC(I)
+INC
+
+Constituency names mis-spelt
+BHADRACHELAM
+BHADRACHALAM
+BHADRACALAM
+
+
+Phonetically Similar Words:
+MADIRA
+MADHIRA
+MADOOR
+
+DEVERKONDA
+DEVARAKONDA
+DEVARKONA
+
+So above was auto detection, how one auto corrects?
+Either compare which keyword gets maximum results from google
+or check data, where are maximum rows for any keyword
+Example:
+SULURPET 38 rows
+SULLURPET 9 rows
+SULLURPETA 9 rows
+
+we can go with 1st one, SULURPET
+
+
+Make sure you correctly identify these issues and resolve them before moving on to the next stage of data cleaning.
+
+
+
+Checklist for Fixing Rows
+
+Delete summary rows: Total, Subtotal rows
+Delete incorrect rows: Header rows, Footer rows
+Delete extra rows: Column number, indicators, Blank rows, Page No.
+
+
+
+Checklist for Fixing Columns
+
+Merge columns for creating unique identifiers if needed: E.g. Merge State, City into Full address
+Split columns for more data: Split address to get State and City to analyse each separately
+Add column names: Add column names if missing
+
+Rename columns consistently: Abbreviations, encoded columns
+
+Delete columns: Delete unnecessary columns
+
+Align misaligned columns: Dataset may have shifted columns
+More things are in Data+clearning+_+CheckList.xlsx
+
