@@ -39,5 +39,6 @@ is not yet received
    we can create new column by search in text, if registration not received was keyword, mark yes.
    
 
-
+Important Links:
+https://www.kdnuggets.com/2017/02/removing-outliers-standard-deviation-python.html
 
